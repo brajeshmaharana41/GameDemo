@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -11,11 +12,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
+    HttpClientModule,
     NgbModule
   ],
   exports: [
     MaterialModule,
     FlexLayoutModule,
+    HttpClientModule,
     NgbModule
   ]
 })

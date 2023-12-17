@@ -20,7 +20,7 @@
     </div>
     <div class="bg1">
         <div class="logincard">
-            <form class="example-form p-4">
+            <form class="example-form p-4" [formGroup]="creatForm" (ngSubmit)="onSubmit()">
                 <div fxLayout="row" fxLayoutAlign="center center">
                     <span class="logintitle">Create Tornament</span>
                 </div>
@@ -29,7 +29,7 @@
                 </div>
                 <div fxLayout="row" fxLayoutAlign="center center">
                     <mat-form-field class="example-full-width" appearance="outline">
-                        <input matInput placeholder="Tornament Name">
+                        <input matInput placeholder="Tornament Name" formControlName="name">
                     </mat-form-field>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="start center" class="ps-5 pb-1">
@@ -38,7 +38,7 @@
                 <div fxLayout="row" fxLayoutAlign="center center">
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label>Choose a date</mat-label>
-                        <input matInput [matDatepicker]="picker">
+                        <input matInput [matDatepicker]="picker" formControlName="date">
                         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker>
                     </mat-form-field>
@@ -48,17 +48,16 @@
                 </div>
                 <div fxLayout="row" fxLayoutAlign="center center">
                     <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label>Select an option</mat-label>
-                        <mat-select [(value)]="selected">
-                          <mat-option valu="option">None</mat-option>
-                          <mat-option value="option1">Option 1</mat-option>
-                          <mat-option value="option2">Option 2</mat-option>
-                          <mat-option value="option3">Option 3</mat-option>
+                        <mat-select [(value)]="selected" formControlName="opt" placeholder='Select Bracket Type'>
+                          <mat-option valu="">Select an option </mat-option>
+                          <mat-option value="option1">Single Elimination</mat-option>
+                          <mat-option value="option2">Double Elimination</mat-option>
                         </mat-select>
                       </mat-form-field>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="center center" class="pb-2">
-                    <a mat-button class="login_btn" [routerLink]="[ '/auth/main' ]">Create</a>
+                    <button mat-button class="login_btn" type="submit">Create</button>
+                        <!-- [routerLink]="[ '/auth/main' ]" -->
                 </div>
             </form>
         </div>

@@ -25,13 +25,13 @@
                     <span class="logintitle">Profile</span>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="center center" class="pt-2 pb-2">
-                    <img src="assets/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.png" alt="" width="150">
+                    <img src="../../../assets/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black.png" alt="" width="150">
                 </div>
                 <div fxLayout="row" fxLayoutAlign="start center" class="ps-5 pb-1">
-                    <span class="login_lable"> Name: Hello</span>
+                    <span class="login_lable"> Name: {{name}}</span>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="start center" class="ps-5 pb-3">
-                    <span>Email : xyxsadas@gmail.com</span>
+                    <span>Email : {{email}}</span>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="center center" class="pb-2">
                     <a mat-button class="login_btn" [routerLink]="[ '/' ]">Logout</a>

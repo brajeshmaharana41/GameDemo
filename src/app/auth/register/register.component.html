@@ -1,6 +1,6 @@
 <div class="bg">
     <div class="logincard">
-        <form class="example-form p-4">
+        <form class="example-form p-4" [formGroup]="regfileForm" (ngSubmit)="onSubmit()">
             <div fxLayout="row" fxLayoutAlign="center center">
                 <span class="logintitle">Register</span>
             </div>
@@ -9,7 +9,7 @@
             </div>
             <div fxLayout="row" fxLayoutAlign="center center">
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <input matInput placeholder="First Name">
+                    <input matInput placeholder="First Name" formControlName="firstName">
                 </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutAlign="start center" class="ps-5">
@@ -17,7 +17,7 @@
             </div>
             <div fxLayout="row" fxLayoutAlign="center center">
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <input matInput placeholder="Last name">
+                    <input matInput placeholder="Last name" formControlName="lastName">
                 </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutAlign="start center" class="ps-5">
@@ -25,7 +25,7 @@
             </div>
             <div fxLayout="row" fxLayoutAlign="center center">
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <input matInput placeholder="Username">
+                    <input matInput placeholder="Username" formControlName="email">
                 </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutAlign="start center" class="ps-5">
@@ -33,11 +33,11 @@
             </div>
             <div fxLayout="row" fxLayoutAlign="center center">
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <input matInput placeholder="Password">
+                    <input matInput placeholder="Password" formControlName="password">
                 </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutAlign="center center" class="pb-2">
-                <button mat-button class="login_btn"  [routerLink]="[ '/auth/login' ]">Sign Up</button>
+                <button mat-button class="login_btn" type="submit">Sign Up</button>
             </div>
         </form>
     </div>

@@ -1,7 +1,7 @@
 <div class="bg">
     <div class="logincard">
-        <form class="example-form p-4">
-            <div fxLayout="row" fxLayoutAlign="center center">
+        <form class="example-form p-4" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div fxLayout="row" fxLayoutAlign="center center" >
                 <span class="logintitle">Login</span>
             </div>
             <div fxLayout="row" fxLayoutAlign="start center" class="ps-5 pb-1">
@@ -9,7 +9,7 @@
             </div>
             <div fxLayout="row" fxLayoutAlign="center center">
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <input matInput placeholder="Username">
+                    <input matInput placeholder="Username" formControlName="email">
                 </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutAlign="start center" class="ps-5 pb-1">
@@ -17,11 +17,11 @@
             </div>
             <div fxLayout="row" fxLayoutAlign="center center">
                 <mat-form-field class="example-full-width" appearance="outline">
-                    <input matInput placeholder="Password">
+                    <input matInput placeholder="Password" formControlName="password">
                 </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutAlign="center center" class="pb-2">
-                <a mat-button class="login_btn" [routerLink]="[ '/auth/main' ]">Login</a>
+                <button mat-button class="login_btn" type="submit">Login</button>
             </div>
             <div fxLayout="row" fxLayoutAlign="center center">
                 <a mat-button class="login_btn_new" [routerLink]="[ '/auth/newuser' ]">New User</a>
